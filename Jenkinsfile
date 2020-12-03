@@ -8,7 +8,7 @@ options {
     }
     stages {
 
-        stage('Build2') {
+        stage('Build3') {
             steps {
                 sh 'mvn clean install'
             }
