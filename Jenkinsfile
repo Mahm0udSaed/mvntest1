@@ -9,7 +9,9 @@ options {
     stages {
 
  stage('source') {
+steps {
             checkout scm
+}
         }
 
         stage('Build338') {
