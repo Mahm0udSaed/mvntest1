@@ -18,13 +18,17 @@ jenkins:
   systemMessage: "Configuration as Code"                
 jobs:
   - script: >
-        multibranchPipelineJob('m_configuration-as-code') {
-        branchSources {
-                git {
-                remote('https://github.com/mkrzyzanowski/blog-001.git')
-                }
+        multibranchPipelineJob('example-1') {
+  branchSources {
+    branchSource {
+      source {
+        git {
+          remote('https://github.com/mkrzyzanowski/blog-001.git')
+        }
       }
-}         
+    }
+  }
+}       
 tool:
   git:
     installations:
