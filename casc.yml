@@ -18,7 +18,7 @@ jenkins:
   systemMessage: "Configuration as Code"                
 jobs:
   - script: >
-    pipelineJob('pipeline') {
+      pipelineJob('pipeline') {
           definition {
               cpsScm {
                   scriptPath 'Jenkinsfile'
