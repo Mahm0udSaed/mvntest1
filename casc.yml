@@ -1,0 +1,32 @@
+jenkins:
+  systemMessage: "Configuration as Code"
+jobs:
+  - script: >
+      pipelineJob('pipeline') {
+          definition {
+              cpsScm {
+                  scriptPath 'Jenkinsfile'
+                  scm {
+                    git {
+                        remote { url 'https://github.com/mkrzyzanowski/blog-001.git' }
+                        branch '*/docker-for-mac'
+                        extensions {}
+                    }
+                  }
+              }
+          }
+      }  
+unclassified:
+  globalLibraries:
+    libraries:
+      - defaultVersion: "master"
+        name: "satqe_pipeline_lib"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                https://github.com/mkrzyzanowski/blog-001.git
+                traits:
+                - "gitBranchDiscovery"
+#                  - branchDiscoveryTrait:
+#                      strategyId: 1      
