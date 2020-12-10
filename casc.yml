@@ -31,3 +31,6 @@ tool:
           installers:
           - maven:
               id: "3.6.3" 
+plugins:
+   required:
+   blueocean: latest
