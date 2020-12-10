@@ -18,14 +18,18 @@ jenkins:
   systemMessage: "Configuration as Code"                
 jobs:
   - script: >
-      multibranchPipelineJob('example') {
-       branchSources {
-        git {
-            id('123456789') // IMPORTANT: use a constant and unique identifier
-            remote('https://github.com/jenkinsci/job-dsl-plugin.git')
-        }
-    }
-} 
+      pipelineJob('maven-pipeline-version-controlled') {
+              cpsScm {
+                  scm {
+                    git {
+                        remote { url 'https://github.com/mkrzyzanowski/blog-001.git' }
+               
+                    }
+                  }
+                
+              }
+          }
+      }
 tool:
   git:
     installations:
