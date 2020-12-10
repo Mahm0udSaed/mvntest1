@@ -16,14 +16,20 @@ unclassified:
                 - "gitBranchDiscovery"
 jobs:
   - script: >
-     multibranchPipelineJob('configuration-as-code') {
-          branchSources {
-              git {
-                  remote('https://github.com/mkrzyzanowski/blog-001.git')
+      multibranchPipelineJob('pipeline') {
+          definition {
+              cpsScm {
+                  scriptPath 'Jenkinsfile'
+                  scm {
+                    git {
+                        remote { url 'https://github.com/mkrzyzanowski/blog-001.git' }
+                        branch '*/docker-for-mac'
+                        extensions {}
+                    }
+                  }
               }
           }
-      }
- 
+      }                
 tool:
   git:
     installations:
