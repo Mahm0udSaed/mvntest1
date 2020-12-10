@@ -15,22 +15,6 @@ unclassified:
                 traits:
                 - "gitBranchDiscovery"
 jenkins:
-  systemMessage: "Configuration as Code"
-unclassified:
-  shell:
-    shell: "bash"
-  globalLibraries:
-    libraries:
-      - defaultVersion: "master"
-        name: "satqe_pipeline_lib"
-        retriever:
-          modernSCM:
-            scm:
-              git:
-                remote: "https://github.com/mkrzyzanowski/blog-001.git"
-                traits:
-                - "gitBranchDiscovery"
-jenkins:
   systemMessage: "Simple seed job example"
 jobs:
   - script: >
