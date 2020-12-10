@@ -14,6 +14,8 @@ unclassified:
                 remote: "https://github.com/mkrzyzanowski/blog-001.git"
                 traits:
                 - "gitBranchDiscovery"
+jenkins:
+  systemMessage: "Configuration as Code"                
 jobs:
   - script: >
         multibranchPipelineJob('m_configuration-as-code') {
