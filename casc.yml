@@ -16,19 +16,13 @@ unclassified:
                 - "gitBranchDiscovery"
 jobs:
   - script: >
-      multibranchPipelineJob('configuration-as-code') {
-          definition {
-              cpsScm {
-                  scriptPath 'Jenkinsfile'
-                  scm {
-                    git {
-                        remote { url 'https://github.com/mkrzyzanowski/blog-001.git' }
-                        extensions {}
-                    }
-                  }
-              }
-          }
-      }                
+        multibranchPipelineJob('m_configuration-as-code') {
+        branchSources {
+                git {
+                remote('https://github.com/mkrzyzanowski/blog-001.git')
+                }
+      }
+}         
 tool:
   git:
     installations:
@@ -41,4 +35,4 @@ tool:
       - installSource:
           installers:
           - maven:
-              id: "3.6.3"      
+              id: "3.6.3" 
