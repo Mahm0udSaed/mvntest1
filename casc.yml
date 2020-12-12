@@ -14,9 +14,7 @@ unclassified:
                 remote: "https://github.com/mkrzyzanowski/blog-001.git"
                 traits:
                 - "gitBranchDiscovery"
-  plugin:
-   required:
-   blueocean: latest              
+               
 jenkins:
   systemMessage: "Configuration as Code"                
 jobs:
