@@ -18,18 +18,6 @@ unclassified:
 jenkins:
   systemMessage: "Configuration as Code"                
 jobs:
-   - script: >
-  agent { label 'master' }
-
-    stages {
-	stage('Build') {
-            steps {
-                sh 'mvn install'
-            }
-        }
-        
-	
-    }
    - url: https://raw.githubusercontent.com/Mahm0udSaed/tt/main/seed.groovy
 tool:
   git:
